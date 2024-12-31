@@ -1,10 +1,11 @@
-# Diwali2024 Jetpack Compose
+# NewYear 2025 Jetpack Compose celebration
 
 Diwali2024 is an Android application developed using Jetpack Compose. This project is a celebration of Diwali, featuring fireworks animations.
 
 ## Features
 
 - Modern UI with Jetpack Compose
+- Animating ImageVectors and applying AGSL RenderEffects sourced from [this gist](https://gist.github.com/riggaroo/b139b0dfbf1fee932862dc52d1b08950)
 - Integration with Lottie animations
 - Custom fonts using Google Fonts
 - Navigation with Jetpack Compose Navigation
@@ -53,6 +54,7 @@ This project uses several libraries and dependencies. Here are some key ones:
 - [Hilt for Dependency Injection](https://developer.android.com/training/dependency-injection/hilt-android)
 - [Google Fonts](https://github.com/google/fonts)
 - [Fireworks Animations](https://gist.github.com/Mikkareem/e87924e81e39a9e1be70c2f9165fe011)
+- [Animating ImageVectors and applying AGSL RenderEffects ](https://medium.com/androiddevelopers/making-jellyfish-move-in-compose-animating-imagevectors-and-applying-agsl-rendereffects-3666596a8888)
 
 For a complete list, refer to the `build.gradle.kts` files:
 
