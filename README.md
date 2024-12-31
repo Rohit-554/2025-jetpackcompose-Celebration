@@ -13,8 +13,7 @@ Diwali2024 is an Android application developed using Jetpack Compose. This proje
 - Fireworks animations sourced from [this gist](https://gist.github.com/Mikkareem/e87924e81e39a9e1be70c2f9165fe011)
 
 ## Video
-[diwali2024_jetpack.webm](https://github.com/user-attachments/assets/2cf33db1-2ad2-4653-bd65-161141b5be56)
-
+https://github.com/user-attachments/assets/c67bb7f8-bf8d-464c-9e0a-a316837a6d1a
 
 ## Installation
 
