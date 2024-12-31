@@ -21,9 +21,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.geometry.center
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PointMode
+import androidx.compose.ui.graphics.RadialGradientShader
+import androidx.compose.ui.graphics.Shader
+import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
@@ -171,11 +176,13 @@ fun FireworkEffectView() {
         }
     }
 
+
+
     Column {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Brush.verticalGradient(listOf(Color.Black, Color.DarkGray))) // Background gradient
+                .background(largeRadialGradient) // Background gradient
         ) {
             Canvas(
                 modifier = Modifier
@@ -194,8 +201,8 @@ fun FireworkEffectView() {
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "✨ Happy Diwali ! ✨", // Added emojis for extra flair
-                    color = Color(0xFFFFD700), // Gold-like color for Diwali vibe
+                    text = "✨ Happy New Year ! ✨",
+                    color = Color(0xFFFFD700),
                     fontSize = 36.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
@@ -236,7 +243,7 @@ fun FireworkEffectView() {
                     textAlign = TextAlign.Center,
                 )
                 Text(
-                    text = "31-10-2024",
+                    text = "31-12-2024",
                     color = Color.LightGray,
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Normal,
@@ -248,3 +255,14 @@ fun FireworkEffectView() {
     }
 }
 
+val largeRadialGradient = object : ShaderBrush() {
+    override fun createShader(size: Size): Shader {
+        val biggerDimension = maxOf(size.height, size.width)
+        return RadialGradientShader(
+            colors = listOf(Color(0xFF2be4dc), Color(0xFF243484)),
+            center = size.center,
+            radius = biggerDimension / 2f,
+            colorStops = listOf(0f, 0.95f)
+        )
+    }
+}

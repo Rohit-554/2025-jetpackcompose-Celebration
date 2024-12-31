@@ -1,9 +1,11 @@
 package io.jadu.diwali2024
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -31,6 +33,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.jadu.diwali2024.introScreens.IntroPager
+import io.jadu.diwali2024.introScreens.JellyfishAnimation
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.PI
@@ -46,7 +49,7 @@ class MainActivity : ComponentActivity() {
             val navHostController = rememberNavController()
             Diwali2024Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Diwali2024(navHostController, innerPadding)
+                    NewYear2025(navHostController, innerPadding)
                 }
             }
         }
@@ -54,16 +57,26 @@ class MainActivity : ComponentActivity() {
 }
 
 
+
 @Composable
-fun Diwali2024(
+fun NewYear2025(
     navHostController: NavHostController,
     innerPadding: PaddingValues
 ) {
+    var startDestination = "intro"
+
+    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        startDestination = "JellyFish"
+    }
     NavHost(
         navController = navHostController,
-        startDestination = "intro",
+        startDestination = startDestination,
         modifier = Modifier.padding(innerPadding)
     ) {
+        composable("JellyFish") {
+            JellyfishAnimation(navHostController)
+        }
+
         composable("intro") {
             IntroPager(navHostController)
         }

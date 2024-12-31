@@ -43,7 +43,7 @@ fun IntroScreenFour(navHostController: NavHostController, pagerState: PagerState
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.hd_1))
+            val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.fireworks))
             LottieAnimation(
                 composition,
                 iterations = LottieConstants.IterateForever,
